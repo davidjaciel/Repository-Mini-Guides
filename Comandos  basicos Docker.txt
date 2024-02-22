@@ -1,0 +1,44 @@
+Comandos docker 
+
+docker version -> muestra version de docker
+
+docker images -> muestra imagenes descargadas
+
+docker pull nombre_dependencia -> descarga la ultima version de la dependencia que indiques. Una dependencia y una imagen son lo mismo
+
+docker pull nombre_dependencia:version -> descarga la version que indiques de la dependendencia que quieres descargar
+
+docker create nombre_contenedor -> crea un contenedor de docker y te devuelve un id del contenedor
+
+
+docker start contenedor_id -> inicia el contenedor del id que indiques
+
+docker start nombre_contenedor ->  inicia el contenedor del nombre que indiques
+
+docker stop contenedor_id -> detiene el contenedor del id que indiques
+
+docker ps -> muestra los contenedores que estan corriendo
+
+docker ps -a -> muestra todos los contenedores 
+
+docker rm nombre_contenedor -> borra el contenedor que indiquemos 
+
+docker create --name nombre_contenedor nombre_imagen -> crea un contenedor al cual le asignamos el nombre que queramos y le agrega la imagen de la dependencia que elijamos 
+
+docker create -p27017:27017 --name nombre_contenedor nombre_imagen -> crea un contenedor, en el cual el primer numero representa el puerto de nuestra computadora fisica y el segundo numero representa el puerto del contenedor. La segunda parte del comando crea un contenedor al cual le asignamos el nombre que queramos y le agrega la imagen de la dependencia que elijamos.
+
+docker create -p27017 --name nombre_contenedor nombre_imagen -> Este comando hace lo mismo que el anterior pero al solo asignar el puerto del contenedor y no asignarle un puerto de nuestra computadora fisica, docker sera el encargado de asignar un puerto fisico por lo que no es recomendable esta opcion.
+
+
+docker logs nombre_contenedor -> Nos proporciona los logs del contenedor al momento de ejecutarse. Se puede usar con el nombre del contenedor o con el id del contenedor.
+
+docker logs --follow nombre_contenedor -> Nos proporciona los logs del contenedor en tiempo real, se queda escuchando al contenedor y espera por mas logs. Se puede usar con el nombre del contenedor o con el id del contenedor.
+
+docker run nombre_imagen-> Encuentra la imagen, sino la encuentra entonces la descarga. Crea un contenedor e inicia dicho contenedor y nos arroja los logs del contenedor.
+
+docker run -d nombre_imagen-> Hace lo mismo que el comando de arriba pero en lugar de arrojarnos los logs del contenedor, solo nos devuelve el id y deja el contenedor corriendo.
+
+docker run --name nombre_contenedor -p27017:27017 -d nombre_imagen -> Encuentra la imagen, sino la encuentra entonces la descarga. Crea un contenedor e inicia dicho contenedor y nos arroja los logs del contenedor. Utiliza los puertos que asignamos y nos permite elegir el nombre del contenedor. Nos devuelve el id y deja el contenedor corriendo.
+
+
+

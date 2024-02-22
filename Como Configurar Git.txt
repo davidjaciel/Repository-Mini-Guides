@@ -1,0 +1,26 @@
+git config --global user.name "David Jaciel"
+
+git config --global user.email "david-1020@live.com.mx"
+
+Crear carpeta ".ssh" en el directorio "C:\Users\david"
+
+mkdir ~/.ssh
+
+ssh-keygen -t ed25519 -C "david-1020@live.com.mx"
+
+En una ventana nueva de git:
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_ed25519
+
+Por ultimo:
+Abre el archivo id_ed25519.pub en un editor de texto 
+o usar el siguiente comando para mostrar el contenido:
+cat ~/.ssh/id_ed25519.pub.
+
+Una vez abierto el archivo, copiar y pegar el contenido en la configuracion 
+de keys SSH de Github.
+
+
+
