@@ -1,0 +1,6 @@
+comando para matar un proceso
+
+netstat -nao|findstr numero_puerto
+
+
+taskkill /F /PID numero_PID
