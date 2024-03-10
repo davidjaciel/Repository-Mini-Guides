@@ -1,0 +1,2 @@
+para la barrita de xpath o cssSelector
+se usa control + F con la barra de inspeccionar del navegador abierta
